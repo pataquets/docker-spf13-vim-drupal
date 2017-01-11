@@ -1,0 +1,41 @@
+set encoding=utf-8
+
+" Editor overrides.
+set shiftwidth=2                " Use indents of 2 spaces
+set expandtab                   " Tabs are spaces, not tabs
+set tabstop=2                   " An indentation every two columns
+set softtabstop=2               " Let backspace delete indent
+
+" associate *.install and *.module files with with php filetype
+au BufReadPost *.install set syntax=php
+au BufReadPost *.module set syntax=php
+au BufReadPost *.inc set syntax=php
+
+" Don't let CtrlP changing the path.
+let g:ctrlp_working_path_mode = '2'
+
+" PHP autocompletion
+au FileType php set omnifunc=phpcomplete#CompletePHP
+let php_sql_query=1
+let php_htmlInStrings=1
+
+" Set tags file as hidden.
+set tags=./.tags;,.tags;
+
+" Vdebug bundle and settings.
+Bundle 'joonty/vdebug.git'
+if !exists('g:vdebug_options')
+  let g:vdebug_options = {}
+endif
+let g:vdebug_options['continuous_mode'] = 1
+let g:vdebug_options['break_on_open'] = 0
+
+" Disable folding.
+set nofoldenable
+let g:DisableAutoPHPFolding = 1
+
+" Ignore some files and dirs with CtrP
+let g:ctrlp_custom_ignore = {
+  \ 'file': '\.tags',
+  \ 'dir': 'sites/default/files/simpletest',
+  \ }
