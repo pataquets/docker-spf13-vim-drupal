@@ -10,6 +10,7 @@ set softtabstop=2               " Let backspace delete indent
 au BufReadPost *.install set syntax=php
 au BufReadPost *.module set syntax=php
 au BufReadPost *.inc set syntax=php
+au BufReadPost *.test set syntax=php
 
 " Don't let CtrlP changing the path.
 let g:ctrlp_working_path_mode = '2'
