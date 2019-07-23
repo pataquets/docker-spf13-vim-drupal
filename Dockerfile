@@ -4,4 +4,4 @@ ADD .vimrc.fork /root/
 ADD .vimrc.bundles.fork /root/
 
 RUN \
-  vim "+set nomore" "+BundleInstall" "+BundleClean" "+qall"
+  vim "+set nomore" "+PluginInstall" "+PluginClean" "+qall"
